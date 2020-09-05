@@ -1,14 +1,17 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import PostCard from './PostCard';
+import { Container } from 'react-bootstrap';
 
-function Posts({counter,addCounter}) {
+function Posts({posts,updatePosts}) {
   return (
-    <div>
+    <Container>
       <h2>Posts</h2>
-      <Button onClick={() => addCounter(counter)} className='mr-2'>increment the counter</Button>
-    </div>
+      {posts.map((post,index) => (
+        <PostCard key={index} post={post} />
+      ))}
+    </Container>
   );
 }
-// {/* <Button onClick={() => setCounter(counter-1)} className='mr-2'>decrement the counter</Button> */}
+
 
 export default Posts;

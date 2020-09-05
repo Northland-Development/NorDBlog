@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Root from './Root';
 import Posts from './Posts';
+import {createPosts} from '../helpers';
 
 const routes = [
   {
@@ -17,21 +18,22 @@ const routes = [
   }
 ];
 
+const blogs = createPosts(10);
+
 
 function App() {
-  const [counter,setCounter] = useState(0);
+  const [posts,setPosts] = useState(blogs);
+  const updatePosts = (newPosts) => setPosts(newPosts);
 
-  const addCounter = () => setCounter(counter+1);
 
   return (
     <div className="App">
       <Router>
         <NavBar routes={routes} />
-        <p>{counter}</p>
         <Switch>
           {routes.map((route,index) => (
             <Route key={index} path={route.path} exact >
-              <route.component counter={counter} addCounter={addCounter} />
+              <route.component posts={posts} updatePosts={updatePosts} />
             </Route>
           ))}
         </Switch>
