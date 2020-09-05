@@ -19,13 +19,20 @@ const routes = [
 
 
 function App() {
+  const [counter,setCounter] = useState(0);
+
+  const addCounter = () => setCounter(counter+1);
+
   return (
     <div className="App">
       <Router>
         <NavBar routes={routes} />
+        <p>{counter}</p>
         <Switch>
           {routes.map((route,index) => (
-            <Route key={index} path={route.path} component={route.component} exact />
+            <Route key={index} path={route.path} exact >
+              <route.component counter={counter} addCounter={addCounter} />
+            </Route>
           ))}
         </Switch>
       </Router>
