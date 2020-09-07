@@ -1,8 +1,9 @@
 import React from 'react';
+import Posts from './Posts';
 import { Container, Jumbotron, Button, ButtonToolbar } from 'react-bootstrap';
 
-function Root() {
 
+function Root({posts,updatePosts}) {
   return (
     <Container>
       <Jumbotron>
@@ -12,6 +13,7 @@ function Root() {
             <Button className='mr-2' onClick={() => console.log('Creating Account')}>Create Account</Button>
         </ButtonToolbar>
       </Jumbotron>
+      <Posts posts={posts} updatePosts={updatePosts} />
     </Container>
   );
 }

@@ -5,11 +5,13 @@ const latin = ["Sed gravida lacus mauris, eget ullamcorper mi suscipit non. Vest
 "Etiam quis mollis nunc. Fusce vel dui ac massa feugiat egestas. Morbi condimentum, mi vitae elementum egestas, nibh libero tincidunt leo, quis auctor ipsum massa ac purus. Nunc urna ex, dictum quis ipsum non, semper congue eros. In pretium eleifend erat. Mauris vel urna eget ipsum tristique hendrerit. Vivamus commodo aliquet mi, in rhoncus enim blandit vitae."]
 
 const createPost = (index) => {
+  const text = latin[index % latin.length];
+  const newDate = () => new Date().toLocaleDateString('en-US');
   const post = {
-    created_at: Date(),
-    edited_at: Date(),
-    deleted_at: Date(),
-    text: latin[Math.random()*latin.length],
+    created_at: newDate(),
+    edited_at: newDate(),
+    deleted_at: newDate(),
+    text: text,
     user_id: 1,
     id: index
   };

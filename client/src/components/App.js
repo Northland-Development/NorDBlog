@@ -1,22 +1,8 @@
 import React, {useState} from 'react';
 import NavBar from './NavBar';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import Root from './Root';
-import Posts from './Posts';
 import {createPosts} from '../helpers';
-
-const routes = [
-  {
-    path: "/",
-    name: "Root",
-    component: Root
-  },
-  {
-    path: "/posts",
-    name: "Posts",
-    component: Posts
-  }
-];
+import routes from '../Routes';
 
 const blogs = createPosts(10);
 
