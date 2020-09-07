@@ -1,9 +1,0 @@
-CREATE TABLE `nordblog`.`blog` (
-  `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `text` VARCHAR(400) NOT NULL,
-  `created_at` DATETIME NOT NULL DEFAULT now(),
-  `updated_at` DATETIME NULL,
-  `deleted_at` DATETIME NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE INDEX `ID_UNIQUE` (`ID` ASC) VISIBLE);

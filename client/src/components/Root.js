@@ -4,6 +4,7 @@ import { Container, Jumbotron, Button, ButtonToolbar } from 'react-bootstrap';
 
 
 function Root({posts,updatePosts}) {
+  console.log(process.env)
   return (
     <Container>
       <Jumbotron>
