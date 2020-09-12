@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: "mysql:latest"
+    container_name: blogging_db
+    restart: always
+    volumes: 
+      - ./db/init:/docker-entrypoint-initdb.d
+      # - .database_container_storage:/var/lib/mysql
+    env_file: .env
+    ports: 
+      - 33061:33060
+      - 3307:3306
+    expose: 
+      - "33060"
+      - "3306"
