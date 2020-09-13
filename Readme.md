@@ -15,6 +15,10 @@ Requirements:
     npm run start
     ```
 
+links:
+- [docker-compose.yml](https://docs.docker.com/compose/compose-file/)
+- [docker install](https://docs.docker.com/get-docker/)
+
 ## Client
 
 relevant docs to be here about the client.
@@ -25,8 +29,4 @@ relevant docs to be here about the api.
 
 ## Database
 
-Descided to go in the direction of having the database in a container for development to avoid having users install and deal with configuring the database. [Read about the container](https://hub.docker.com/_/mysql/). The entry point for this container is to run the command: `docker-compose up`. 
-
-links:
-- [docker-compose.yml](https://docs.docker.com/compose/compose-file/)
-- [docker install](https://docs.docker.com/get-docker/)
+Using a MySQL database, we descided to go in the direction of having the database in a container for development to avoid having users install and deal with configuring the database. [Read about the container](https://hub.docker.com/_/mysql/). The entry point for this container is to run the command: `docker-compose up`. 
