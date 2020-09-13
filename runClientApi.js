@@ -2,7 +2,7 @@ const concurrently = require('concurrently');
 const path = require('path');
 const config = require('dotenv').config({path: path.resolve(__dirname,'.env')})
 const react_objs = {};
-Object.keys(config.parsed).filter(key => !key.includes('DB_')).map(key => {
+Object.keys(config.parsed).map(key => {
     react_objs[`REACT_APP_${key}`] = config.parsed[key];
 })
 
