@@ -9,7 +9,7 @@ Object.keys(config.parsed).filter(key => !key.includes('DB_')).map(key => {
 concurrently([
     { command: 'npm:runAPI', name: 'Api' , env: { ...config.parsed }},
     { command: 'npm:runClient', name: 'Client', env: { ...react_objs }},
-    { command: 'docker-compose up', name: 'DB' }
+    { command: 'npm:runDB', name: 'DB' }
 ], {
     prefix: 'name'
 }).then();

@@ -2,10 +2,10 @@
     "scripts": {
         "installAPI": "cd api && npm install",
         "installClient": "cd client && npm install",
-        "installAll": "concurrently --kill-others npm:installAPI npm:installClient",
+        "installAll": "npm run installAPI && npm run installClient && npm i",
         "runAPI": "cd api && npm run start",
         "runClient": "cd client && npm run start",
-        "runAll": "concurrently npm:runAPI npm:runClient",
+        "runDB":"docker-compose up",
         "start": "node runClientApi.js"
     },
     "dependencies": {
