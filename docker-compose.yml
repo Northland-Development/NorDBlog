@@ -8,6 +8,7 @@ services:
       - ./db/init:/docker-entrypoint-initdb.d
       # - .database_container_storage:/var/lib/mysql
     env_file: .env
+    command: --default-authentication-plugin=mysql_native_password
     ports: 
       - 33061:33060
       - 3307:3306

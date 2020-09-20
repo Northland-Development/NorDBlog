@@ -25,6 +25,23 @@ CREATE TABLE IF NOT EXISTS `nordblog`.`blog` (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('brandon', 'brandon@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('adam', 'adam@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('lexi', 'lexi@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('tammie', 'tammie@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('guy', 'guy@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('shawn', 'shawn@example.com', 'password');
+INSERT INTO `nordblog`.`user` (`display_name`, `email`, `password`) VALUES ('amanda', 'amanda@example.com', 'password');
+
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('1 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '1');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('2 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '1');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('3 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '2');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('4 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '2');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('5 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '3');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('6 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '3');
+INSERT INTO `nordblog`.`blog` (`text`, `user_id`) VALUES ('7 Lorem ipsum dolor sit amet, fugit conceptam forensibus an eos, ex pri noster maluisset definiebas, paulo scripta nonumes ius ex. In duo eros harum, te eam ullum intellegat. Facete dolorem id ius, ex consulatu tincidunt pri. Insolens postulant est ea.', '4');
+
+
 -- CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` 
 -- SQL SECURITY DEFINER VIEW `blog_user` AS 
 -- select 
