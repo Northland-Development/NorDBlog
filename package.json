@@ -5,7 +5,7 @@
         "installAll": "npm run installAPI && npm run installClient && npm i",
         "runAPI": "cd api && npm run start",
         "runClient": "cd client && npm run start",
-        "runDB":"docker-compose up",
+        "runDB": "docker-compose up",
         "start": "node runClientApi.js"
     },
     "dependencies": {
