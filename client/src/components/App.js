@@ -12,10 +12,12 @@ function App() {
   const [posts,setPosts] = useState(blogs);
   const updatePosts = (newPosts) => setPosts(newPosts);
 
+  console.log(process.env)
+
   useEffect(() => {
-    getPosts().then((response) => {
-      console.log(response)
-    }).catch((err) => console.error(err))
+    // getPosts().then((response) => {
+    //   console.log(response)
+    // }).catch((err) => console.error(err))
   })
 
 

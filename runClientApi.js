@@ -9,7 +9,6 @@ Object.keys(config.parsed).map(key => {
 concurrently([
     { command: 'npm:runAPI', name: 'Api' , env: { ...config.parsed }},
     { command: 'npm:runClient', name: 'Client', env: { ...react_objs }},
-    { command: 'npm:runDB', name: 'DB' }
 ], {
     prefix: 'name'
 }).then();

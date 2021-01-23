@@ -1,5 +1,6 @@
 var mysqlx = require('@mysql/xdevapi');
-
+// import { getSession } from '@mysql/xdevapi';
+const getSession = mysqlx.getSession
 
 const connectionSettings = { 
   host: process.env.API_URL || 'localhost', 
@@ -10,17 +11,15 @@ const connectionSettings = {
 
 
 const setSession = () => {
-  return mysqlx.getSession(connectionSettings)
-  .then( dictSession => {
+  return getSession(connectionSettings
+    ).then( dictSession => {
     console.log(dictSession.getTable)
-    return dictSession.getTable('nordblog')
-    // return dictSession.getTable(process.env.MYSQL_DATABASE || 'nordblog')
   }
   ).catch(err => console.error(err))
 }
 
 const selectTable = (tableName,selectArray) => {
-  setSession()
+  return setSession()
   // return setSession().then(
   //   session => session.getTable(tableName).select(selectArray).execute()
   // ).catch(err => console.error(err)
@@ -44,15 +43,10 @@ const selectTable = (tableName,selectArray) => {
 
 
 const getBlogs = () => {
-  selectTable('blog',['ID','text','created_at','user_id'])
   // selectTable('blog',['ID','text','created_at','user_id'])
-  // .then(
-  //   queryResults => {
-  //     console.log(queryResults)
-  //   }
-  // ).catch(err => console.error(err))
+  return selectTable('blog',['ID','text','created_at','user_id'])
 }
 
 // export {getBlogs};
 
-getBlogs()
+getBlogs().then(r => console.log(r)).catch(err => console.error(err))
